@@ -1,0 +1,53 @@
+*{
+    box-sizing: border-box;
+    background-color: rgb(20, 20, 20);
+    overflow: hidden;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.gridContainer{
+    position: relative;
+    gap:1vmin;
+    display: grid;
+    grid-template: repeat(4, 1fr)/repeat(4, 1fr);
+    background-color: rgb(20, 20, 20);
+    transition: 200ms;
+}
+.tile{
+    --y: 0;
+    --x: 0;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: calc(var(--y) * (20vmin + 1vmin));
+    left: calc(var(--x) * (20vmin + 1vmin));
+    width:20vmin;
+    height:20vmin;
+    font-size: 7.5vmin;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-radius: 1vmin;
+    transition: 200ms;
+    font-weight: 700;
+    animation:  show 200ms;
+}
+@keyframes show {
+    0%{
+        opacity: 0.5;
+        transform: scale(0);
+    }
+}
+.slot{
+    text-align: center;
+    vertical-align: middle;
+    font-size: medium;
+    width:20vmin;
+    height:20vmin;
+    border-radius: 1vmin;
+    background: rgba(50, 50, 50, 1);
+    transition: 500ms;
+}
